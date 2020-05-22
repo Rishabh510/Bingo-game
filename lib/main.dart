@@ -1,4 +1,7 @@
+import 'package:bingoapp/models/numbers.dart';
+import 'package:bingoapp/screens/game.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'myHomePage.dart';
 import 'package:flutter/services.dart';
 
@@ -25,10 +28,13 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.green,
         highlightColor: Colors.yellow,
         scaffoldBackgroundColor: Colors.blueGrey,
-//        fontFamily:
       ),
-//      home: MyHomePage,
-      home: MyHomePage(title: 'Bingo with family'),
+      home: ChangeNotifierProvider(
+        create: (BuildContext context) {
+          return Numbers();
+        },
+        child: Game(),
+      ),
       debugShowCheckedModeBanner: false,
     );
   }
