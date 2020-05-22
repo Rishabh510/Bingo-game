@@ -44,15 +44,15 @@ class _NumberBoxState extends State<NumberBox> {
 //        height: MediaQuery.of(context).size.width,
           child: Text(
             '${widget.value}',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
             textAlign: TextAlign.center,
             textScaleFactor: 2,
           ),
           decoration: BoxDecoration(
 //              borderRadius: BorderRadius.circular(10),
               border: Border.all(width: 5, color: Colors.black),
-              shape: BoxShape.circle,
-              color: crossed ? Colors.red : Colors.green[100]),
+              shape: BoxShape.rectangle,
+              color: crossed ? Colors.pinkAccent : Colors.black),
         ),
       ),
     );

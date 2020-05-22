@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'numberBox.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -60,7 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -69,14 +72,27 @@ class _MyHomePageState extends State<MyHomePage> {
 //            '$_numbers',
 //          ),
           SizedBox(
+            height: 70,
+          ),
+          Container(
+            color: Colors.pink[100],
+            width: double.infinity,
             height: MediaQuery.of(context).size.height / 10,
             child: Text(
               ' B I N G O ',
-              style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 10),
+//              style: TextStyle(
+//                fontStyle: FontStyle.italic,
+//                fontSize: 34,
+//                color: Colors.red,
+//                fontWeight: FontWeight.bold,
+//                letterSpacing: 10,
+//              ),
+              style: GoogleFonts.indieFlower(
+                fontSize: 32,
+                color: Colors.pink,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 10,
+              ),
               textScaleFactor: 2,
             ),
           ),
@@ -97,7 +113,12 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _restart,
         tooltip: 'Restart match',
-        child: Icon(Icons.refresh),
+        elevation: 20,
+        focusColor: Colors.black,
+        backgroundColor: Colors.pink,
+        splashColor: Colors.green,
+        hoverColor: Colors.yellow,
+        child: Icon(Icons.scatter_plot),
       ),
     );
   }
