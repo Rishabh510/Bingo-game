@@ -94,39 +94,51 @@ class Numbers extends ChangeNotifier {
       }
     } else {
       if (index % 6 == 0) {
+        if (dLeft.length == 5) progress--;
         dLeft.remove(index);
       }
-      if (index % 4 == 0 && index != 24) {
+      if (index % 4 == 0 && index != 24 && index != 0) {
+        if (dRight.length == 5) progress--;
         dRight.remove(index);
       }
       if (index % 5 == 0) {
+        if (r1.length == 5) progress--;
         r1.remove(index);
       }
       if (index % 5 == 1) {
+        if (r2.length == 5) progress--;
         r2.remove(index);
       }
       if (index % 5 == 2) {
+        if (r3.length == 5) progress--;
         r3.remove(index);
       }
       if (index % 5 == 3) {
+        if (r4.length == 5) progress--;
         r4.remove(index);
       }
       if (index % 5 == 4) {
+        if (r5.length == 5) progress--;
         r5.remove(index);
       }
       if (index ~/ 5 == 0) {
+        if (c1.length == 5) progress--;
         c1.remove(index);
       }
       if (index ~/ 5 == 1) {
+        if (c2.length == 5) progress--;
         c2.remove(index);
       }
       if (index ~/ 5 == 2) {
+        if (c3.length == 5) progress--;
         c3.remove(index);
       }
       if (index ~/ 5 == 3) {
+        if (c4.length == 5) progress--;
         c4.remove(index);
       }
       if (index ~/ 5 == 4) {
+        if (c5.length == 5) progress--;
         c5.remove(index);
       }
     }

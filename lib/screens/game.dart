@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bingoapp/models/numbers.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,12 @@ class Game extends StatelessWidget {
                   Container(
                     color: Colors.white,
                     height: 16,
-                    width: (obj.progress <= 5) ? obj.progress * (MediaQuery.of(context).size.width / 5) : MediaQuery.of(context).size.width,
+                    width: (obj.progress < 5) ? obj.progress * (MediaQuery.of(context).size.width / 5) : MediaQuery.of(context).size.width,
+                    child: AnimatedContainer(
+                      curve: Curves.bounceIn,
+                      duration: Duration(seconds: 2),
+                      child: (obj.progress >= 5) ? Text('You Won') : Text(''),
+                    ),
                   ),
                 ],
               ),
@@ -61,8 +67,8 @@ class Game extends StatelessWidget {
                     onTap: () {
                       obj.cross(i);
                       obj.updateLists(i);
-                      print('dLeft: ${obj.dLeft}');
-                      print('dRight: ${obj.dRight}');
+//                      print('dLeft: ${obj.dLeft}');
+//                      print('dRight: ${obj.dRight}');
 //                      print(obj.r1);
 //                      print(obj.r2);
 //                      print(obj.r3);
@@ -73,15 +79,17 @@ class Game extends StatelessWidget {
 //                      print(obj.c3);
 //                      print(obj.c4);
 //                      print(obj.c5);
-                      print('Progress: ${obj.progress}');
+//                      print('Progress: ${obj.progress}');
                     },
                     child: Container(
-                      color: (!obj.isCrossed[i]) ? Colors.blue : Colors.red,
+                      color: (!obj.isCrossed[i]) ? Colors.blue : Colors.deepPurpleAccent,
                       child: Center(
                         child: Text(
                           '${obj.numbers[i]}',
                           style: TextStyle(
-                            fontSize: 40,
+                            fontSize: 48,
+                            decoration: (obj.isCrossed[i]) ? TextDecoration.lineThrough : TextDecoration.none,
+                            decorationColor: Colors.red,
                           ),
                         ),
                       ),
