@@ -20,15 +20,13 @@ class Game extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Container(
+                  AnimatedContainer(
+                    curve: Curves.fastOutSlowIn,
+                    duration: Duration(seconds: 4),
                     color: Colors.white,
                     height: 16,
                     width: (obj.progress < 5) ? obj.progress * (MediaQuery.of(context).size.width / 5) : MediaQuery.of(context).size.width,
-                    child: AnimatedContainer(
-                      curve: Curves.bounceIn,
-                      duration: Duration(seconds: 2),
-                      child: (obj.progress >= 5) ? Text('You Won') : Text(''),
-                    ),
+                    child: (obj.progress >= 5) ? Text('You Won') : Text(''),
                   ),
                 ],
               ),
@@ -67,19 +65,6 @@ class Game extends StatelessWidget {
                     onTap: () {
                       obj.cross(i);
                       obj.updateLists(i);
-//                      print('dLeft: ${obj.dLeft}');
-//                      print('dRight: ${obj.dRight}');
-//                      print(obj.r1);
-//                      print(obj.r2);
-//                      print(obj.r3);
-//                      print(obj.r4);
-//                      print(obj.r5);
-//                      print(obj.c1);
-//                      print(obj.c2);
-//                      print(obj.c3);
-//                      print(obj.c4);
-//                      print(obj.c5);
-//                      print('Progress: ${obj.progress}');
                     },
                     child: Container(
                       color: (!obj.isCrossed[i]) ? Colors.blue : Colors.deepPurpleAccent,
