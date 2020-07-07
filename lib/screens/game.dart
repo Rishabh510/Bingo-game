@@ -73,17 +73,17 @@ class Game extends StatelessWidget {
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
-                            colors: (!obj.isCrossed[i]) ? [Color(0xff6e97c2), Color(0xff5d7fa3)] : [Color(0xff5d7fa3), Color(0xff6e97c2)],
+                            colors: (!obj.isCrossed[i]) ? [Colors.white10, Colors.black12] : [Color(0xff5d7fa3), Color(0xff6e97c2)],
                           ),
 //                          border: Border.all(color: Colors.blueGrey),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0xff46607b),
+                              color: Colors.black12,
                               blurRadius: 5,
                               offset: Offset(1, 1),
                             ),
                             BoxShadow(
-                              color: Color(0xff88baef),
+                              color: Colors.white10,
                               blurRadius: 5,
                               offset: Offset(-1, -1),
                             ),
