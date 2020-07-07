@@ -2,7 +2,6 @@ import 'package:bingoapp/models/numbers.dart';
 import 'package:bingoapp/screens/game.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'myHomePage.dart';
 import 'package:flutter/services.dart';
 
 //void main() {
@@ -26,8 +25,8 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.blueAccent,
         canvasColor: Colors.yellow[700],
         splashColor: Colors.green,
-        highlightColor: Colors.yellow,
-        scaffoldBackgroundColor: Colors.blueGrey,
+        highlightColor: Colors.blueGrey,
+        scaffoldBackgroundColor: Color(0xff678db5),
       ),
       home: ChangeNotifierProvider(
         create: (BuildContext context) {

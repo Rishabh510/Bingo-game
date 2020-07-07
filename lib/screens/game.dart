@@ -22,7 +22,7 @@ class Game extends StatelessWidget {
                 children: <Widget>[
                   AnimatedContainer(
                     curve: Curves.fastOutSlowIn,
-                    duration: Duration(seconds: 4),
+                    duration: Duration(seconds: 1),
                     color: Colors.white,
                     height: 16,
                     width: (obj.progress < 5) ? obj.progress * (MediaQuery.of(context).size.width / 5) : MediaQuery.of(context).size.width,
@@ -67,12 +67,32 @@ class Game extends StatelessWidget {
                       obj.updateLists(i);
                     },
                     child: Container(
-                      color: (!obj.isCrossed[i]) ? Colors.blue : Colors.deepPurpleAccent,
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          borderRadius: BorderRadius.circular(32),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: (!obj.isCrossed[i]) ? [Color(0xff6e97c2), Color(0xff5d7fa3)] : [Color(0xff5d7fa3), Color(0xff6e97c2)],
+                          ),
+//                          border: Border.all(color: Colors.blueGrey),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xff46607b),
+                              blurRadius: 5,
+                              offset: Offset(1, 1),
+                            ),
+                            BoxShadow(
+                              color: Color(0xff88baef),
+                              blurRadius: 5,
+                              offset: Offset(-1, -1),
+                            ),
+                          ]),
                       child: Center(
                         child: Text(
                           '${obj.numbers[i]}',
                           style: TextStyle(
-                            fontSize: 48,
+                            fontSize: 40,
                             decoration: (obj.isCrossed[i]) ? TextDecoration.lineThrough : TextDecoration.none,
                             decorationColor: Colors.red,
                           ),
