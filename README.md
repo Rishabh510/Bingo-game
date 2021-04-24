@@ -1,16 +1,19 @@
 # bingoapp
 
-A new Flutter application.
+Download APK here: https://github.com/Rishabh510/Bingo-game/releases
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
+### Video Demo
+<img src="https://drive.google.com/uc?export=view&id=1CkVVVkURxzT33WJ8jyt0U24RxM3jn_b-" width= "400" height = "800">
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### To clone the project run:
+```
+flutter pub get
+flutter run
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+ 
